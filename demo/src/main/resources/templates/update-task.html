@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:rel="stylesheet"
+         th:href="@{/webjars/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css}" />
+      <link th:rel="stylesheet"
+         th:href="@{/webjars/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css}" />
+      <link th:rel="stylesheet"
+         th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}" />
+      <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+      <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+     
+    <link href="../static/css/custom-styles.css" rel="stylesheet" type="text/css"/>
+
+  
+
+</head>
+
+
+
+
+
+<body>
+     <div class="container">
+        <h1 class="text-center"> update task </h1>
+        <div class="col-md-6">
+             
+           
+                
+            <div class="form-group">
+                <form action ="#" th:action="@{/task/{id}(id=${task.id})}" th:object="${task}" method="POST" >
+           <label>description</label>  
+            <input class="form-control" type="text" th:field="*{description}"id="description" placeholder="Add a description">
+            
+            <div class="checkbox">
+               <label>
+                   <input type="checkbox" th:checked="${completed} == true" th:field="*{completed}" id="completed" />
+                   Complete
+               </label>
+           </div>
+           
+          <button class="btn btn-default" type="submit">Update</button>
+          <input type="hidden" th:field="*{createdDate}"/>
+          <input type="hidden" th:field="*{modifiedDate}"/>
+       
+        </form>
+
+        </div> 
+       
+       </div> 
+</body>
+</html> 

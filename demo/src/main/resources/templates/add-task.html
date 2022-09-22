@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:rel="stylesheet"
+         th:href="@{/webjars/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css}" />
+      <link th:rel="stylesheet"
+         th:href="@{/webjars/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css}" />
+      <link th:rel="stylesheet"
+         th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}" />
+      <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+      <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+     
+    <link href="../static/css/custom-styles.css" rel="stylesheet" type="text/css"/>
+    <title>Document</title>
+</head>
+<body>
+   <h1>sdfghjkl</h1>
+    <div class="container">
+        <div class="col-md-6">
+            <h1>add new task</h1>
+            <form action="#" th:action="@{/taskss}" th:object="${task}" method="POST">
+             <div class="form-group">
+              <label for="description">Description</label>
+              <input class="form-control" type="text" th:field="*{description}" id="description" placefolder="Description">
+
+            </div> 
+            
+        
+            <button type="submit" class="btn btn-success">add task</button>
+        </form>
+   
+    </div> 
+
+</body>
+</html>
